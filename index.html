@@ -113,54 +113,54 @@
               }
             });
 
-        // Preload images, wha-whaaaat!
-        $('.image').each(function(i, child) {
+          // Preload images, wha-whaaaat!
+          $('.image').each(function(i, child) {
 
-          var image = document.createElement('img');
-          image.onload = function() {};
-          image.src = child.getAttribute('data-src');
+            var image = document.createElement('img');
+            image.onload = function() {};
+            image.src = child.getAttribute('data-src');
 
-        });
-
-        $('.content').each(function(i, child) {
-
-          var $child = $(child);
-          var $elem = $child.parent();
-          var children = $child.find('.image');
-
-          // TODO: Make transition
-          var $a = $('<div class="a" />');
-          var $b = $('<div class="b" />');
-
-          var $prev = $('<div class="prev" />');
-          var $next = $('<div class="next" />');
-
-          var index = 0;
-          var current = $b;
-
-          $prev.click(function(e) {
-            e.preventDefault();
-            set(index - 1);
-          });
-          $next.click(function(e) {
-            e.preventDefault();
-            set(index + 1);
           });
 
-          var set = function(i) {
-            index = mod(i, children.length);
-            $a.css({
-              backgroundImage: 'url(' + children[index].getAttribute('data-src') + ')'
+          $('.content').each(function(i, child) {
+
+            var $child = $(child);
+            var $elem = $child.parent();
+            var children = $child.find('.image');
+
+            // TODO: Make transition
+            var $a = $('<div class="a" />');
+            var $b = $('<div class="b" />');
+
+            var $prev = $('<div class="prev" />');
+            var $next = $('<div class="next" />');
+
+            var index = 0;
+            var current = $b;
+
+            $prev.click(function(e) {
+              e.preventDefault();
+              set(index - 1);
             });
-          };
+            $next.click(function(e) {
+              e.preventDefault();
+              set(index + 1);
+            });
 
-          set(index);
+            var set = function(i) {
+              index = mod(i, children.length);
+              $a.css({
+                backgroundImage: 'url(' + children[index].getAttribute('data-src') + ')'
+              });
+            };
 
-          $elem
-            .append($a)
-            .append($b)
-            .append($prev)
-            .append($next);
+            set(index);
+
+            $elem
+              .append($a)
+              .append($b)
+              .append($prev)
+              .append($next);
 
           });
 
