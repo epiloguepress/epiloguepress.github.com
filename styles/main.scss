@@ -1,0 +1,366 @@
+@import "bourbon/bourbon";
+
+$font-headline: "franklin-gothic-urw-comp", helvetica, arial, sans-serif;
+// $font-body: "franklin-gothic-urw-con", helvetica, arial, sans-serif;
+$font-body: "franklin-gothic-urw", helvetica, arial, sans-serif;
+$futura: "futura-pt", "Futura", helvetica, sans-serif;
+
+$font-size: 22px;
+$line-height: 36px;
+$small-type: 15px;
+
+$max-width: 1200px;
+$content-height: 675px;
+$padding: 30px;
+$description-width: 600px;
+
+$black: #333;
+$white: #999;
+$gray: rgb(242, 241, 236);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  background: $black;
+  color: $white;
+
+  font-family: $font-body;
+  font-size: $font-size;
+  line-height: $line-height;
+  @include transition(opacity 0.35s $ease-out-circ);
+
+}
+
+div.scripts {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+  font-family: $font-headline;
+  font-size: 18 / 14 * $font-size;
+  line-height: 22 / 20 * $line-height;
+  font-weight: 100;
+
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+div.section {
+
+  position: relative;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  .container {
+    position: relative;
+    margin-left: 60px;
+    margin-right: 60px;
+    // min-height: $content-height * 0.75;
+  }
+
+}
+
+.first-read {
+  font-family: $font-headline;
+  text-align: center;
+}
+
+#footer .first-read {
+  font-family: $font-body;
+  font-size: $small-type;
+}
+
+div#header {
+
+  margin-top: 100px;
+  // margin-bottom: - $content-height * 0.51;
+  @include transition(margin-bottom 0.5s $ease-out-circ);
+
+  &.enabled {
+    margin-bottom: 0;
+  }
+
+}
+
+.ep,
+.ep-black,
+.ep-0,
+.ep-1 {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  top: 0;
+  left: $padding;
+  background-size: 100%;
+  z-index: 9999;
+}
+
+.ep {
+  background: url(../images/ep-gray.svg) center center no-repeat;
+}
+.ep-0 {
+  background: url(../images/ep-0-gray.svg) center center no-repeat;
+}
+.ep-1 {
+  background: url(../images/1.svg) center center no-repeat;
+  display: none;
+}
+.ep-black {
+  background: url(../images/ep-black.svg) center center no-repeat;
+  display: none;
+}
+
+div#about {
+
+  .description {
+    font-size: $small-type;
+    line-height: $line-height * 0.75;
+    max-width: $description-width;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $line-height;
+    // text-align: justify;
+  }
+
+}
+
+.content {
+
+  padding: $padding;
+  width: 1000000px; 
+
+  .image {
+
+    display: none;
+
+    // $ratio: 1.5;
+    // $width: 340px;
+    // $height: $width * $ratio;
+    // $gutter: $line-height / 4;
+
+    // @include inline-block;
+    // width: $width;
+    // height: $height;
+
+  }
+
+}
+
+.container {
+  .a, .b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background: rgba(255, 100, 100, 0.1);
+  }
+  .prev {
+    position: absolute;
+    width: 25%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    // background: rgba(100, 100, 255, 0.1);
+    cursor: pointer;
+  }
+  .next {
+    position: absolute;
+    width: 25%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    // background: rgba(100, 100, 255, 0.1);
+    cursor: pointer;
+  }
+
+}
+
+#flatland {
+
+  .container {
+
+    background: $gray;
+    overflow: hidden;
+    min-height: $content-height;
+
+    .image {
+      background: #ccc;
+    }
+
+    .ep,
+    .ep-0 {
+      margin-top: 45px;
+    }
+    .ep-1 {
+      margin-top: 30px;
+    }
+
+  }
+
+  .title {
+    text-transform: uppercase;
+    position: absolute;
+    font-family: $futura;
+    font-weight: 700;
+    letter-spacing: 2px;
+    top: 35px;
+    left: 45px;
+    z-index: 9999;
+    color: $black;
+    a {
+      padding: 0;
+    }
+  }
+
+}
+
+.social {
+  text-align: center;
+  a:link, a:visited {
+    padding: 0;
+    padding-bottom: $line-height / 20;
+    border-bottom: 1px solid $white;
+  }
+}
+
+a:link, a:visited {
+  color: $white;
+  text-decoration: none;
+  padding: $line-height / 2;
+  span {
+    border-bottom: 1px solid $white;
+  }
+}
+
+#mc_embed_signup {
+  max-width: $description-width;
+  margin: 0 auto;
+  font-size: $small-type;
+  margin-bottom: $line-height * 1.5;
+  input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: $font-body;
+    font-size: $small-type;
+    color: $white;
+    display: inline;
+    &[type="email"] {
+      width: 50%;
+      padding-bottom: $font-size / 6 + 1;
+      border-bottom: 1px solid $white;
+      border-radius: 0;
+      color: #fff;
+    }
+    &[type="submit"] {
+      font-family: $font-headline;
+      // float: right;
+      margin-left: $font-size;
+      border: 1px solid $white;
+      border-radius: $font-size / 8;
+      width: 72px;
+      text-align: center;
+      padding: $line-height / 8 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.about-button {
+  margin-bottom: 45px;
+}
+
+.on-kickstarter {
+  // position: absolute;
+  // bottom: 45px;
+  // right: 45px;
+  position: relative;
+  top: $line-height / 6;
+  width: 72px * 1.125;
+  height: 25px * 1.125;
+  background: url(../images/on-kickstarter.svg) center center no-repeat;
+  background-size: 100%;
+  z-index: 9999;
+  content: "";
+}
+
+@media screen and (max-width: 600px) {
+  h1, h2, .ep-1, .ep-black {
+    opacity: 0;
+  }
+  .ep,
+  .ep-0 {
+    width: 100%;
+    left: 0;
+  }
+  div.section {
+    .container {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  div#about {
+    .description {
+      margin-left: $line-height;
+      margin-right: $line-height;
+    }
+  }
+  #flatland {
+    .title {
+      width: 100%;
+      left: 0;
+      text-align: center;
+    }
+    .on-kickstarter {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  #mc_embed_signup {
+    margin-left: $line-height;
+    margin-right: $line-height;
+  }
+}
+
+::selection {
+  opacity: 1;
+  background: $gray; /* WebKit/Blink Browsers */
+  color: $black;
+}
+::-moz-selection {
+  opacity: 1;
+  background: $gray; /* Gecko Browsers */
+  color: $black;
+}
+
+::-webkit-input-placeholder {
+   color: $white;
+   opacity: 0.33;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $white;  
+   opacity: 0.33;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $white;  
+   opacity: 0.33;
+}
+
+:-ms-input-placeholder {  
+   color: $white;  
+   opacity: 0.33;
+}
