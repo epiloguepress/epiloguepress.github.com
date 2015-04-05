@@ -40,7 +40,7 @@ div.section {
 
 #footer .first-read {
   font-family: "franklin-gothic-urw", helvetica, arial, sans-serif;
-  font-size: 13px; }
+  font-size: 15px; }
 
 div#header {
   margin-top: 100px;
@@ -58,7 +58,7 @@ div#header {
   width: 72px;
   height: 72px;
   top: 0;
-  left: 45px;
+  left: 30px;
   background-size: 100%;
   z-index: 9999; }
 
@@ -68,63 +68,38 @@ div#header {
 .ep-0 {
   background: url(../images/ep-0-gray.svg) center center no-repeat; }
 
-.ep-1 {
-  background: url(../images/1.svg) center center no-repeat;
-  display: none; }
-
-.ep-black {
-  background: url(../images/ep-black.svg) center center no-repeat;
-  display: none; }
-
 div#about .description {
   font-size: 15px;
-  line-height: 25px;
-  max-width: 575px;
+  line-height: 27px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 36px; }
 
-.content {
-  padding: 30px;
-  width: 1000000px; }
-  .content .image {
-    display: none; }
-
-.container .a, .container .b {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-.container .prev {
-  position: absolute;
-  width: 25%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  cursor: pointer; }
-.container .next {
-  position: absolute;
-  width: 25%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  cursor: pointer; }
-
 #flatland .container {
-  background: #f2f1ec;
-  overflow: hidden;
-  min-height: 675px; }
+  background-color: #f1f1f1; }
   #flatland .container .image {
-    background: #ccc; }
+    background-repeat: no-repeat;
+    height: 675px;
+    background-image: url("../images/loader.gif");
+    opacity: 0; }
+  #flatland .container .image.loaded {
+    background-size: cover;
+    opacity: 1;
+    -webkit-transition: opacity 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition: opacity 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: opacity 3s cubic-bezier(0.075, 0.82, 0.165, 1); }
+  #flatland .container .image.loading {
+    background-size: 32px 10.5px;
+    background-position: center;
+    opacity: 1; }
   #flatland .container .ep,
   #flatland .container .ep-0 {
     margin-top: 45px; }
   #flatland .container .ep-1 {
     margin-top: 30px; }
+#flatland .container:not(:first-child) {
+  margin-top: 50px; }
 #flatland .title {
   text-transform: uppercase;
   position: absolute;

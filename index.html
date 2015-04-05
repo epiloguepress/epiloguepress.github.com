@@ -56,27 +56,37 @@
       </div>
       <div id="flatland" class="section">
         <div class="container">
-          <div class="content">
-            <div class="image" data-src="./images/thumbnails/Ep1_001.jpg"></div>
-            <div class="image" data-src="./images/thumbnails/Ep1_002.jpg"></div>
-            <div class="image" data-src="./images/thumbnails/Ep1_003.jpg"></div>
-            <div class="image" data-src="./images/thumbnails/Ep1_004.jpg"></div>
-            <div class="image" data-src="./images/thumbnails/Ep1_005.jpg"></div>
-            <div class="image" data-src="./images/thumbnails/Ep1_006.jpg"></div>
-            <div class="image" data-src="./images/thumbnails/Ep1_007.jpg"></div>
-          </div>
-          <div class="ep-black"></div>
-          <div class="ep-1"></div>
+          <!-- <div class="ep-black"></div> -->
+          <!-- <div class="ep-1"></div> -->
           <div class="title">
             Flatland
             <a href="https://www.kickstarter.com/projects/epiloguepress/1262800098/flatland"><div class="on-kickstarter"></div></a>
           </div>
+          <div class="image" data-src="./images/thumbnails/Ep1_001.jpg"></div>
+        </div>
+        <div class="container">
+          <div class="image" data-src="./images/thumbnails/Ep1_002.jpg"></div>
+        </div>
+        <div class="container">
+          <div class="image" data-src="./images/thumbnails/Ep1_003.jpg"></div>
+        </div>
+        <div class="container">
+          <div class="image" data-src="./images/thumbnails/Ep1_004.jpg"></div>
+        </div>
+        <div class="container">
+          <div class="image" data-src="./images/thumbnails/Ep1_005.jpg"></div>
+        </div>
+        <div class="container">
+          <div class="image" data-src="./images/thumbnails/Ep1_006.jpg"></div>
+        </div>
+        <div class="container">
+          <div class="image" data-src="./images/thumbnails/Ep1_007.jpg"></div>
         </div>
       </div>
       <div id="footer" class="section">
         <br />
         <p class="first-read">
-          Photography by James Han  &copy; Epilogue Press 2015
+          Photography by James Han &copy; Epilogue Press 2015
         </p>
         <br />
       </div>
@@ -113,68 +123,33 @@
               }
             });
 
-          // Preload images, wha-whaaaat!
-          $('.image').each(function(i, child) {
-
-            var image = document.createElement('img');
-            image.onload = function() {};
-            image.src = child.getAttribute('data-src');
-
-          });
-
-          $('.content').each(function(i, child) {
-
-            var $child = $(child);
-            var $elem = $child.parent();
-            var children = $child.find('.image');
-
-            // TODO: Make transition
-            var $a = $('<div class="a" />');
-            var $b = $('<div class="b" />');
-
-            var $prev = $('<div class="prev" />');
-            var $next = $('<div class="next" />');
-
-            var index = 0;
-            var current = $b;
-
-            $prev.click(function(e) {
-              e.preventDefault();
-              set(index - 1);
+          var loadImages = function() {
+            $('.image').each(function(i, child) {
+              $(child).toggleClass('loading', true);
+              var image = document.createElement('img');
+              image.onload = function() {
+                $(child).css({
+                  backgroundImage: 'url(' + child.getAttribute('data-src') + ')'
+                });
+                $(child).toggleClass('loading', false);
+                setTimeout(function() {
+                  $(child).toggleClass('loaded', true);
+                }, 100);
+              };
+              image.src = child.getAttribute('data-src');
             });
-            $next.click(function(e) {
-              e.preventDefault();
-              set(index + 1);
-            });
-
-            var set = function(i) {
-              index = mod(i, children.length);
-              $a.css({
-                backgroundImage: 'url(' + children[index].getAttribute('data-src') + ')'
-              });
-            };
-
-            set(index);
-
-            $elem
-              .append($a)
-              .append($b)
-              .append($prev)
-              .append($next);
-
-          });
-
-          setTimeout(function() {
-            $(document.body).css('opacity', 1);
-            resize();
-          }, 1000);
-
-          function mod(v, l) {
-            while (v < 0) {
-              v += l;
-            }
-            return v % l;
+            
           }
+
+          // Preload the first image, wha-whaaaat!
+          var image = document.createElement('img');
+          image.onload = function() {
+            $(document.body).css('opacity', 1);
+            // Then show the page and load rest of the images.
+            resize();
+            loadImages();
+          };
+          image.src = $('.image')[0].getAttribute('data-src');
 
         });
 

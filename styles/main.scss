@@ -109,14 +109,14 @@ div#header {
 .ep-0 {
   background: url(../images/ep-0-gray.svg) center center no-repeat;
 }
-.ep-1 {
-  background: url(../images/1.svg) center center no-repeat;
-  display: none;
-}
-.ep-black {
-  background: url(../images/ep-black.svg) center center no-repeat;
-  display: none;
-}
+// .ep-1 {
+//   background: url(../images/1.svg) center center no-repeat;
+//   display: none;
+// }
+// .ep-black {
+//   background: url(../images/ep-black.svg) center center no-repeat;
+//   display: none;
+// }
 
 div#about {
 
@@ -132,71 +132,29 @@ div#about {
 
 }
 
-.content {
-
-  padding: $padding;
-  width: 1000000px; 
-
-  .image {
-
-    display: none;
-
-    // $ratio: 1.5;
-    // $width: 340px;
-    // $height: $width * $ratio;
-    // $gutter: $line-height / 4;
-
-    // @include inline-block;
-    // width: $width;
-    // height: $height;
-
-  }
-
-}
-
-.container {
-  .a, .b {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    // background: rgba(255, 100, 100, 0.1);
-  }
-  .prev {
-    position: absolute;
-    width: 25%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    // background: rgba(100, 100, 255, 0.1);
-    cursor: pointer;
-  }
-  .next {
-    position: absolute;
-    width: 25%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    // background: rgba(100, 100, 255, 0.1);
-    cursor: pointer;
-  }
-
-}
-
 #flatland {
 
   .container {
 
-    background: $gray;
-    overflow: hidden;
-    min-height: $content-height;
+    background-color: #f1f1f1;
 
     .image {
-      background: #ccc;
+      background-repeat: no-repeat;
+      height: $content-height;
+      background-image: url('../images/loader.gif');
+      opacity: 0;
+    }
+
+    .image.loaded {
+      background-size: cover;
+      opacity: 1;
+      @include transition(opacity 3s $ease-out-circ);
+    }
+
+    .image.loading {
+      background-size: 32px 10.5px;
+      background-position: center;
+      opacity: 1;
     }
 
     .ep,
@@ -207,6 +165,10 @@ div#about {
       margin-top: 30px;
     }
 
+  }
+
+  .container:not(:first-child) {
+    margin-top: 50px; 
   }
 
   .title {
