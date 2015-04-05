@@ -76,6 +76,9 @@ div#about .description {
   margin-right: auto;
   margin-bottom: 36px; }
 
+
+
+
 #flatland .container {
   background-color: #f1f1f1; }
   #flatland .container .image {
@@ -99,7 +102,7 @@ div#about .description {
   #flatland .container .ep-1 {
     margin-top: 30px; }
 #flatland .container:not(:first-child) {
-  margin-top: 50px; }
+  margin-top: 20px; }
 #flatland .title {
   text-transform: uppercase;
   position: absolute;
