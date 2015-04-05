@@ -82,6 +82,7 @@ div#about .description {
     background-repeat: no-repeat;
     height: 675px;
     background-image: url("../images/loader.gif");
+    background-position: center;
     opacity: 0; }
   #flatland .container .image.loaded {
     background-size: cover;
@@ -91,7 +92,6 @@ div#about .description {
     transition: opacity 3s cubic-bezier(0.075, 0.82, 0.165, 1); }
   #flatland .container .image.loading {
     background-size: 32px 10.5px;
-    background-position: center;
     opacity: 1; }
   #flatland .container .ep,
   #flatland .container .ep-0 {

@@ -142,6 +142,7 @@ div#about {
       background-repeat: no-repeat;
       height: $content-height;
       background-image: url('../images/loader.gif');
+      background-position: center;
       opacity: 0;
     }
 
@@ -153,7 +154,6 @@ div#about {
 
     .image.loading {
       background-size: 32px 10.5px;
-      background-position: center;
       opacity: 1;
     }
 
