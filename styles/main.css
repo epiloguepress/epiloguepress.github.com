@@ -4,7 +4,7 @@
 
 body {
   background: #333;
-  color: #999;
+  color: #AAA;
   font-family: "franklin-gothic-urw", helvetica, arial, sans-serif;
   font-size: 22px;
   line-height: 36px;
@@ -118,14 +118,14 @@ div#about .description {
   .social a:link, .social a:visited {
     padding: 0;
     padding-bottom: 1.8px;
-    border-bottom: 1px solid #999; }
+    border-bottom: 1px solid #AAA; }
 
 a:link, a:visited {
-  color: #999;
+  color: #AAA;
   text-decoration: none;
   padding: 18px; }
   a:link span, a:visited span {
-    border-bottom: 1px solid #999; }
+    border-bottom: 1px solid #AAA; }
 
 #mc_embed_signup {
   max-width: 600px;
@@ -138,18 +138,18 @@ a:link, a:visited {
     outline: none;
     font-family: "franklin-gothic-urw", helvetica, arial, sans-serif;
     font-size: 15px;
-    color: #999;
+    color: #AAA;
     display: inline; }
     #mc_embed_signup input[type="email"] {
       width: 50%;
       padding-bottom: 4.66667px;
-      border-bottom: 1px solid #999;
+      border-bottom: 1px solid #AAA;
       border-radius: 0;
       color: #fff; }
     #mc_embed_signup input[type="submit"] {
       font-family: "franklin-gothic-urw-comp", helvetica, arial, sans-serif;
       margin-left: 22px;
-      border: 1px solid #999;
+      border: 1px solid #AAA;
       border-radius: 2.75px;
       width: 72px;
       text-align: center;
@@ -210,21 +210,21 @@ a:link, a:visited {
   color: #333; }
 
 ::-webkit-input-placeholder {
-  color: #999;
+  color: #AAA;
   opacity: 0.33; }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: #999;
+  color: #AAA;
   opacity: 0.33; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #999;
+  color: #AAA;
   opacity: 0.33; }
 
 :-ms-input-placeholder {
-  color: #999;
+  color: #AAA;
   opacity: 0.33; }
 
 /*# sourceMappingURL=main.css.map */
