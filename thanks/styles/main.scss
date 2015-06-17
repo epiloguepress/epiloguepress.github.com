@@ -138,6 +138,9 @@ body {
         color: $red;
         &:hover {
           color: $white;
+          &:after {
+            color: $red;
+          }
         }
       }
     }
@@ -149,6 +152,9 @@ body {
         cursor: pointer;
         &:hover {
           color: $white;
+          &:after {
+            color: $green;
+          }
         }
       }
 

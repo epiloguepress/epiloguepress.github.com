@@ -81,11 +81,16 @@ body {
       body ul#collaborators li:hover,
       body ul#collaborators li a:hover {
         color: #fff; }
+        body ul#collaborators li:hover:after,
+        body ul#collaborators li a:hover:after {
+          color: #ff5548; }
     body ul#backers li {
       color: #47f4b6;
       cursor: pointer; }
       body ul#backers li:hover {
         color: #fff; }
+        body ul#backers li:hover:after {
+          color: #47f4b6; }
   body .signum {
     display: inline-block;
     margin-top: 20pt;
