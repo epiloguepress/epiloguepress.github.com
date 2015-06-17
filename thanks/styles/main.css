@@ -18,7 +18,8 @@ body {
     margin-bottom: 46pt; }
     body h1 span.footnote, body h2 span.footnote, body h3 span.footnote, body h4 span.footnote, body h5 span.footnote, body h6 span.footnote {
       font-size: 45%;
-      margin-left: 5pt; }
+      margin-left: 5pt;
+      opacity: 0.33; }
   body #headline {
     position: fixed;
     top: 0;
