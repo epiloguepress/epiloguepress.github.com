@@ -36,7 +36,7 @@ body {
       right: 80pt; }
     body #headline input {
       position: relative;
-      font-family: "franklin-gothic-urw", helvetica, arial, sans-serif;
+      font-family: "franklin-gothic-urw-cond", helvetica, arial, sans-serif;
       color: #cccccc;
       background: transparent;
       border: 0;
