@@ -16,6 +16,9 @@ body {
     font-size: 40pt;
     font-weight: 400;
     margin-bottom: 46pt; }
+    body h1 span.footnote, body h2 span.footnote, body h3 span.footnote, body h4 span.footnote, body h5 span.footnote, body h6 span.footnote {
+      font-size: 45%;
+      margin-left: 5pt; }
   body #headline {
     position: fixed;
     top: 0;
@@ -97,6 +100,8 @@ body {
     body h1, body h2, body h3, body h4, body h5, body h6 {
       font-size: 20pt;
       margin-bottom: 23pt; }
+      body h1 span.footnote, body h2 span.footnote, body h3 span.footnote, body h4 span.footnote, body h5 span.footnote, body h6 span.footnote {
+        margin-left: 2.5pt; }
     body #headline {
       padding: 23pt 40pt;
       box-shadow: 0 0 20pt rgba(0, 0, 0, 0.5); }

@@ -35,6 +35,12 @@ body {
     font-size: $font-size;
     font-weight: 400;
     margin-bottom: $line-height;
+
+    span.footnote {
+      font-size: 45%;
+      margin-left: $font-size / 8;
+    }
+
   }
 
   #headline {
@@ -173,6 +179,9 @@ body {
     h1, h2, h3, h4, h5, h6 {
       font-size: $font-size;
       margin-bottom: $line-height;
+      span.footnote {
+        margin-left: $font-size / 8;
+      }
     }
 
     #headline {
