@@ -48,7 +48,8 @@ body {
       width: 280pt;
       background: url(../images/search.svg) center right no-repeat;
       background-size: 16pt;
-      padding-right: 25pt; }
+      padding-right: 25pt;
+      border-radius: 0; }
   body #content {
     position: relative;
     margin-top: 106pt; }
