@@ -57,7 +57,8 @@ body {
       display: block;
       margin-bottom: 46pt; }
     body #content #message {
-      display: none; }
+      display: none;
+      margin-bottom: 46pt; }
     body #content span.name {
       color: #47f4b6;
       text-transform: capitalize;
