@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Epilogue Press: Thanks</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+
+    <script src="//use.typekit.net/lqx0otn.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+
+    <div id="headline">
+      <p class="thanks">Thank you&hellip;</p>
+      <div id="search">
+        <input type="text" value="" />
+      </div>
+    </div>
+
+    <div id="content" style="display: none;">
+
+      <div id="list">
+        <h2>Flatland Collaborators</h2>
+        <ul id="collaborators"></ul>
+
+        <h2>Flatland Backers</h2>
+        <ul id="backers"></ul>
+      </div>
+
+      <div id="message">
+        <span class="name"></span>
+        <span class="description"></span>
+      </div>
+
+      <h2>
+        Love,
+        <br />
+        <span class="signum">&nbsp;</span>
+      </h2>
+
+    </div>
+
+    <div class="scripts">
+      <script src="./third-party/jquery.js"></script>
+      <script src="./third-party/underscore.js"></script>
+      <script src="./src/filter.js"></script>
+      <script>
+
+        var filter, backers;
+        var messages = [
+          'for making our dreams come true!',
+          'for helping make Flatland!',
+          'for being totally awesome!',
+          'for buying us pizza!',
+          'for believing in us!',
+          'for making this possible!'
+        ];
+
+        $(function() {
+
+          var ul = document.querySelector('#collaborators');
+          var collaborators = [
+            { id: 0, name: 'The Key Printing and Binding', site: 'http://www.thekeyprintingandbinding.com/' },
+            { id: 1, name: 'Lady Bones Press', site: 'http://www.ladybonesprint.com/' },
+            { id: 2, name: 'Rian DeVos', site: 'http://www.riandevos.com/' },
+            { id: 3, name: 'Jono Brandel', site: 'http://jonobr1.com/' },
+            { id: 4, name: 'Aki Rodic', site: 'http://akirodic.com/' },
+            { id: 5, name: 'Sunny Oh', site: 'http://sunnyoh.net/' },
+            { id: 6, name: 'Chris Trumbull', site: 'https://instagram.com/mrtrumbull' },
+            { id: 7, name: 'James Han', site: 'http://mrginto.com/' }
+          ];
+
+          for (var i = 0; i < collaborators.length; i++) {
+
+            var elem = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = collaborators[i].site;
+            a.target = '_blank';
+            a.textContent = collaborators[i].name;
+            elem.classList.add('active');
+
+            elem.appendChild(a);
+            ul.appendChild(elem);
+
+            collaborators.elem = elem;
+
+          }
+
+          $.getJSON('../assets/backers.json', function(resp) {
+
+            backers = resp;
+            var ul = document.querySelector('#backers');
+            var select = function(e) {
+              showMessage(this.textContent);
+            };
+
+            for (var i = 0; i < backers.length; i++) {
+
+              var elem = document.createElement('li');
+              elem.textContent = backers[i].name;
+              elem.classList.add('active');
+              elem.addEventListener('click', select, false);
+              ul.appendChild(elem);
+
+              backers[i].elem = elem;
+
+            }
+
+            filter = new Filter(backers, {
+              key: 'name'
+            });
+
+            var query = _.debounce(function() {
+
+              var i;
+
+              if (!this.value) {
+                for (i = 0; i < backers.length; i++) {
+                  backers[i].elem.classList.add('active');
+                }
+                return;
+              }
+
+              for (i = 0; i < backers.length; i++) {
+                backers[i].elem.classList.remove('active');
+              }
+
+              var result = filter.search($input.val());
+
+              for (i = 0; i < result.length; i++) {
+                result[i].elem.classList.add('active');
+              }
+
+            }, 350);
+
+            $('#content').fadeIn();
+            var $input = $('#search input')
+              .bind('focus', function() {
+                $(document.body).animate({
+                  scrollTop: $('#backers').position().top
+                })
+              })
+              .bind('keydown', function(e) {
+                switch (e.which) {
+                  case 8:  // delete
+                    query();
+                    break;
+                }
+              })
+              .bind('keypress', query);
+
+            $('#headline .thanks').css('cursor', 'pointer').click(hideMessage);
+            $('.signum').css('cursor', 'pointer').click(hideMessage);
+
+          });
+
+          function showMessage(name) {
+            var message = messages[Math.floor(Math.random() * (messages.length - 1))];
+            $message = $('#message');
+            $message.find('.name').html(name);
+            $message.find('.description').html(message);
+            $('#list').fadeOut(function() {
+              $message.fadeIn();
+            });
+          }
+
+          function hideMessage() {
+            $('#message').fadeOut(function() {
+              $('#list').fadeIn();
+            });
+          }
+
+        });
+
+      </script>
+    </div>
+
+  </body>
+</html>

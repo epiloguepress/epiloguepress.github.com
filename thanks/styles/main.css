@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  overflow-y: scroll;
+  /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+  background: #282828;
+  font-family: "franklin-gothic-urw-cond", helvetica, arial, sans-serif;
+  font-size: 40pt;
+  line-height: 46pt;
+  color: #cccccc;
+  padding: 80pt; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-size: 40pt;
+    font-weight: 400;
+    margin-bottom: 46pt; }
+  body #headline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #282828;
+    padding: 46pt 80pt;
+    box-shadow: 0 0 40pt rgba(0, 0, 0, 0.5); }
+    body #headline > * {
+      display: inline-block; }
+    body #headline #search {
+      position: absolute;
+      right: 80pt; }
+    body #headline input {
+      position: relative;
+      font-family: "franklin-gothic-urw", helvetica, arial, sans-serif;
+      color: #cccccc;
+      background: transparent;
+      border: 0;
+      line-height: 40pt;
+      vertical-align: middle;
+      font-size: 20pt;
+      border-bottom: 2px solid #cccccc;
+      outline: none;
+      width: 280pt;
+      background: url(../images/search.svg) center right no-repeat;
+      background-size: 16pt;
+      padding-right: 25pt; }
+  body #content {
+    position: relative;
+    margin-top: 160pt; }
+    body #content #list {
+      display: block;
+      margin-bottom: 46pt; }
+    body #content #message {
+      display: none; }
+    body #content span.name {
+      color: #47f4b6;
+      text-transform: capitalize;
+      margin-right: 5pt; }
+  body ul {
+    list-style: none;
+    margin-bottom: 46pt; }
+    body ul li {
+      display: none;
+      text-transform: capitalize; }
+      body ul li.active {
+        display: inline-block; }
+      body ul li:after {
+        content: " /";
+        margin-right: 5pt; }
+    body ul a {
+      text-decoration: none; }
+    body ul#collaborators li,
+    body ul#collaborators li a {
+      color: #ff5548; }
+      body ul#collaborators li:hover,
+      body ul#collaborators li a:hover {
+        color: #fff; }
+    body ul#backers li {
+      color: #47f4b6;
+      cursor: pointer; }
+      body ul#backers li:hover {
+        color: #fff; }
+  body .signum {
+    display: inline-block;
+    margin-top: 20pt;
+    width: 64px;
+    height: 72px;
+    background: url(../images/signum.svg) center center no-repeat;
+    background-size: contain; }
+
+@media (max-width: 800px) {
+  body {
+    font-size: 20pt;
+    line-height: 23pt;
+    padding: 40pt; }
+    body h1, body h2, body h3, body h4, body h5, body h6 {
+      font-size: 20pt;
+      margin-bottom: 23pt; }
+    body #headline {
+      padding: 23pt 40pt;
+      box-shadow: 0 0 20pt rgba(0, 0, 0, 0.5); }
+      body #headline #search {
+        right: 40pt; }
+      body #headline input {
+        line-height: 20pt;
+        font-size: 10pt;
+        width: 80pt;
+        background-size: 8pt;
+        padding-right: 12.5pt; }
+    body #content {
+      margin-top: 80pt; }
+      body #content #list {
+        margin-bottom: 23pt; }
+      body #content span.name {
+        margin-right: 2.5pt; }
+    body ul {
+      margin-bottom: 23pt; }
+      body ul li:after {
+        margin-right: 2.5pt; } }
+::selection {
+  opacity: 1;
+  background: #cccccc;
+  /* WebKit/Blink Browsers */
+  color: #282828; }
+
+::-moz-selection {
+  opacity: 1;
+  background: #cccccc;
+  /* Gecko Browsers */
+  color: #282828; }
+
+::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 0.33; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff;
+  opacity: 0.33; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+  opacity: 0.33; }
+
+:-ms-input-placeholder {
+  color: #fff;
+  opacity: 0.33; }
+
+/*# sourceMappingURL=main.css.map */
