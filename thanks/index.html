@@ -141,7 +141,7 @@
             $('#content').fadeIn();
             var $input = $('#search input')
               .bind('focus', function() {
-                $(document.body).animate({
+                $(document.body).stop().animate({
                   scrollTop: $('#backers').position().top
                 })
               })
