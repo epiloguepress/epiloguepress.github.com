@@ -74,7 +74,7 @@ body {
       border: 0;
       line-height: $font-size;
       vertical-align: middle;
-      font-size: $font-size / 2;
+      font-size: 45%;
       border-bottom: 2px solid $grey;
       outline: none;
       width: $font-size * 7;
@@ -196,7 +196,7 @@ body {
 
       input {
         line-height: $font-size;
-        font-size: $font-size / 2;
+        // font-size: $font-size / 2;
         width: $font-size * 4;
         background-size: $font-size * 0.4;
         padding-right: $font-size / 2 + $font-size / 8;

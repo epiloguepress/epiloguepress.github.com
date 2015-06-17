@@ -41,7 +41,7 @@ body {
       border: 0;
       line-height: 40pt;
       vertical-align: middle;
-      font-size: 20pt;
+      font-size: 45%;
       border-bottom: 2px solid #cccccc;
       outline: none;
       width: 280pt;
@@ -109,7 +109,6 @@ body {
         right: 40pt; }
       body #headline input {
         line-height: 20pt;
-        font-size: 10pt;
         width: 80pt;
         background-size: 8pt;
         padding-right: 12.5pt; }
