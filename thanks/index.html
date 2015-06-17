@@ -116,6 +116,8 @@
             var query = _.debounce(function() {
 
               var i;
+              $input.trigger('focus');
+
 
               if (!this.value) {
                 for (i = 0; i < backers.length; i++) {
@@ -138,7 +140,7 @@
 
             $('#content').fadeIn();
             var $input = $('#search input')
-              .bind('focus mousedown touchstart', function() {
+              .bind('focus', function() {
                 $(document.body).animate({
                   scrollTop: $('#backers').position().top
                 })
